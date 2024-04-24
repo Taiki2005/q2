@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.link{
+  display: flex;
+  height: 9vh;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+/* Style the header */
+.header {
+  overflow: hidden;
+  grid-area: header;
+  background-color: #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.header>h1 {
+  float: left;
+  margin-left: 20px;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.header>.link>a{
+  display: flex;
+  float: right;
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.header>.link>a:hover{
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 118, 214);
+  transition: 0.3s;
+}
+
+.cards {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  min-width: 100%;
+  min-height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Style the footer */
+.footer {
+  clear: left;
+  grid-area: footer;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(147, 184, 190);
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1000px) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width:599px) and (min-width: 200px){
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+  }
+  .header {
+    flex-shrink: 0;
+    height: 10px;
+  }
+  .left{
+    text-align: center;
+  }
+  .link {
+    height: 1vh;
+  }
+}
+
